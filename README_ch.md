@@ -1,12 +1,12 @@
 ![npm](https://img.shields.io/npm/v/ascii2binary) [![GitHub stars](https://img.shields.io/github/stars/5102a/ascii2binary)](https://github.com/5102a/ascii2binary/stargazers) [![GitHub issues](https://img.shields.io/github/issues/5102a/ascii2binary)](https://github.com/5102a/ascii2binary/issues) [![GitHub license](https://img.shields.io/github/license/5102a/ascii2binary)](https://github.com/5102a/ascii2binary/blob/main/LICENSE) [![CI via GitHub Actions](https://github.com/5102a/ascii2binary/actions/workflows/main.yml/badge.svg)](https://github.com/5102a/ascii2binary/actions/workflows/main.yml)
 
-English | [简体中文](README_ch.md)
+[English](README.md) | 简体中文
 
 # ascii2binary
 
-Base64-string to ArrayBuffer
+Base64-string 直接转 ArrayBuffer
 
-## Install
+## 安装
 
 ```shell
 // npm
@@ -19,55 +19,54 @@ $ yarn add ascii2binary
 $ pnpm add ascii2binary
 ```
 
-## Usage
+## 使用
 
-### ES6 Module
+### ES6 模块
 
 ```javascript
-// Note that there is no default export
+// 注意，没有默认导出
 import { ascii2binary } from 'ascii2binary';
 ```
 
-### node.js (commonjs)
+### node.js (commonjs) 模块
 
 ```javascript
-// Note that there is no default export
+// 注意，没有默认导出
 const { ascii2binary } = require('ascii2binary')
 ```
 
-### Use
+### 用法
 
 ```javascript
-// Input base64 string
+// 输入 base64 字符串
 ascii2binary('yq==') // ArrayBuffer: [202]
 ```
 
-Convert Picture
+图片数据转换（图像 base64 转原始二进制数据）
 
 ```javascript
-// Base64 string to ArrayBuffer
+// base64 字符串转 ArrayBuffer
 const base64 = 'iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAV0lEQVQImWP8DwQMWAATjPFkZztDuLUBg5pJBEP1+vsMjGAdj1YyhHu0M5yHq5eG6njzFEkQBJ5CJUSkGQxRJKQZGP5DweMdbf/DrPT/qxqH/69ad+8/AGWjJsYqydAgAAAAAElFTkSuQmCC'
 ascii2binary(base64) // ArrayBuffer: [...]
 ```
 
-### Development and construction
+### 开发与构建
 
-Installation Dependencies
+安装依赖
 
 ```shell
 $ pnpm install
 ```
 
-Repackage
+重新打包
 
 ```shell
 $ pnpm run build
 ```
 
-### Test
+### 测试
 
-It is necessary to install the development software
-
+需先安装开发依赖
 
 ```shell
 $ pnpm run test

@@ -1,0 +1,40 @@
+{
+  "name": "ascii2binary",
+  "version": "1.0.0",
+  "description": "ascii2binary",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build:cjs": "esbuild src/index.ts --outfile=dist/index.cjs --minify --sourcemap --loader:.ts=ts --format=cjs",
+    "build:esm": "esbuild src/index.ts --outfile=dist/index.mjs --minify --sourcemap --loader:.ts=ts --format=esm",
+    "build:type": "tsc -p .",
+    "build": "rm -rf ./dist && pnpm run build:cjs && pnpm run build:esm &&  pnpm run build:type",
+    "test": "mocha ./test/*.js"
+  },
+  "keywords": [
+    "atob",
+    "base64",
+    "ArrayBuffer",
+    "binary",
+    "ascii"
+  ],
+  "author": "5012a <1015355299@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "assert": "^2.0.0",
+    "esbuild": "^0.16.12",
+    "mocha": "^10.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/5102a/ascii2binary.git"
+  }
+}
